@@ -1,0 +1,27 @@
+server:
+  port: 9090
+
+spring:
+  application:
+    name: API-GATEWAY
+  config:
+    import: configserver:http://${CONFIG_SERVER_URL:localhost}:9295
+  cloud:
+    gateway:
+      routes:
+        - id: CUSTOMER-PERSON-SERVICE
+          uri: lb://CUSTOMER-PERSON-SERVICE
+          predicates:
+            - Path=/clientes/**
+        - id: ACCOUNT-MOVE-SERVICE-CUENTAS
+          uri: lb://ACCOUNT-MOVE-SERVICE
+          predicates:
+            - Path=/cuentas/**
+        - id: ACCOUNT-MOVE-SERVICE-MOVIMIENTOS
+          uri: lb://ACCOUNT-MOVE-SERVICE
+          predicates:
+            - Path=/movimientos/**
+        - id: ACCOUNT-MOVE-SERVICE-MOVIMIENTOS
+          uri: lb://ACCOUNT-MOVE-SERVICE
+          predicates:
+            - Path=/reportes/**

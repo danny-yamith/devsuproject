@@ -1,0 +1,16 @@
+server:
+  port: 8083
+
+spring:
+  datasource:
+    url: jdbc:mysql://${DB_HOST:localhost}:3306/accountmovedb
+    username: root
+    driverClassName: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL57InnoDBDialect
+    hibernate:
+      ddl-auto: update
+  application:
+    name: ACCOUNT-MOVE-SERVICE
+  config:
+    import: configserver:http://localhost:9295

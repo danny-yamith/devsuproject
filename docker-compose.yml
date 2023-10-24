@@ -1,0 +1,61 @@
+version: '3'
+services:
+  serviceregistry:
+    build:
+      context: ./service-registry
+      dockerfile: Dockerfile
+    container_name: serviceregistry
+    ports:
+      - '8761:8761'
+  configserver:
+    build:
+      context: ./ConfigServer
+      dockerfile: Dockerfile
+    container_name: configserver
+    ports:
+      - '9295:9295'
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://configserver:9296/actuator/health"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    depends_on:
+      - serviceregistry
+  cloudgateway:
+    build:
+      context: ./CloudGateway
+      dockerfile: Dockerfile
+    container_name: cloudgateway
+    ports:
+      - '9090:9090'
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_URL=configserver
+    depends_on:
+      - configserver
+  customerpersonservice:
+    build:
+      context: ./CustomerPersonService
+      dockerfile: Dockerfile
+    container_name: customerpersonservice
+    ports:
+      - '8082:8082'
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_URL=configserver
+    depends_on:
+      - configserver
+  accountmoveservice:
+    build:
+      context: ./AccountMoveService
+      dockerfile: Dockerfile
+    container_name: accountmoveservice
+    ports:
+      - '8083:8083'
+    environment:
+      - EUREKA_SERVER_ADDRESS=http://serviceregistry:8761/eureka
+      - CONFIG_SERVER_URL=configserver
+    depends_on:
+      - configserver
