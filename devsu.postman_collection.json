@@ -1,0 +1,468 @@
+{
+	"info": {
+		"_postman_id": "1f47ec20-9ff5-412a-9bdd-81a334bda3ae",
+		"name": "devsu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12755418"
+	},
+	"item": [
+		{
+			"name": "listAllCustomers",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"name\": \"Marianela Montalvo\",\r\n    \"address\": \"Amazonas y NNUU\",\r\n    \"Teléfono\": \"097548965\",\r\n    \"phone\": \"5678\",\r\n    \"status\": true,\r\n     \"age\": 40,\r\n     \"gender\":\"female\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n            \"name\": \"Jose Lema\",\r\n    \"address\": \"Otavalo sn y principal\",\r\n    \"phone\": \"098254785\",\r\n    \"password\": \"1234\",\r\n    \"status\": true,\r\n     \"age\": 30,\r\n     \"gender\":\"male\",\r\n    \"identification\" :\"111114912\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteCustomer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"name\": \"Marianela Montalvo\",\r\n    \"address\": \"Amazonas y NNUU\",\r\n    \"phone\": \"097548965\",\r\n    \"password\": \"5678\",\r\n    \"status\": true,\r\n    \"identification\" :\"82564912\",\r\n     \"age\": 40,\r\n     \"gender\":\"female\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCustomer by id",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n            \"name\": \"Jose Lema\",\r\n    \"address\": \"Otavalo sn y principal\",\r\n    \"phone\": \"098254785\",\r\n    \"password\": \"1234\",\r\n    \"status\": true,\r\n     \"age\": 30,\r\n     \"gender\":\"male\",\r\n    \"identification\" :\"111114912\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes/customer/5",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes",
+						"customer",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateALLCustomer",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"name\": \"delete delete\",\r\n    \"address\": \"13 junio y Equinoccial\",\r\n    \"phone\": \"098874587\",\r\n    \"password\": \"1245\",\r\n    \"status\": true,\r\n     \"age\": 25,\r\n    \"gender\":\"male\",\r\n    \"identification\" :\"111114912\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes/14",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateCustomer",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"identification\" :\"878945\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes/7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes",
+						"7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n            \"name\": \"Jose Lema\",\r\n    \"address\": \"Otavalo sn y principal\",\r\n    \"phone\": \"098254785\",\r\n    \"password\": \"1234\",\r\n    \"status\": true,\r\n     \"age\": 30,\r\n     \"gender\":\"male\",\r\n    \"identification\" :\"111114912\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateALLAccount",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "   {\r\n        \"numacc\": \"585541115-del-del\",\r\n        \"type\": \"Corriente\",\r\n        \"initial\": 1000,\r\n        \"status\": \"true\",\r\n        \"customerId\": 5\r\n  }\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/cuentas/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"cuentas",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateAccount",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n            \"name\": \"Jose Lema\",\r\n    \"address\": \"Otavalo sn y principal\",\r\n    \"phone\": \"098254785\",\r\n    \"password\": \"1234\",\r\n    \"status\": true,\r\n     \"age\": 30,\r\n     \"gender\":\"male\",\r\n    \"identification\" :\"111114912\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAllAccounts",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"name\": \"Marianela Montalvo\",\r\n    \"address\": \"Amazonas y NNUU\",\r\n    \"Teléfono\": \"097548965\",\r\n    \"phone\": \"5678\",\r\n    \"status\": true,\r\n     \"age\": 40,\r\n     \"gender\":\"female\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/clientes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"clientes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "deleteAccount",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"name\": \"Marianela Montalvo\",\r\n    \"address\": \"Amazonas y NNUU\",\r\n    \"phone\": \"097548965\",\r\n    \"password\": \"5678\",\r\n    \"status\": true,\r\n    \"identification\" :\"82564912\",\r\n     \"age\": 40,\r\n     \"gender\":\"female\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/cuentas/19",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"cuentas",
+						"19"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "addMove",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"date\": \"2023-10-22T20:42:38.144Z\",\r\n    \"type\": \"Retiro\",\r\n    \"valor\": 575,\r\n    \"balance\" : 0,\r\n     \"account_id\" : 13\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAllMovements",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"name\": \"Marianela Montalvo\",\r\n    \"address\": \"Amazonas y NNUU\",\r\n    \"Teléfono\": \"097548965\",\r\n    \"phone\": \"5678\",\r\n    \"status\": true,\r\n     \"age\": 40,\r\n     \"gender\":\"female\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "reportMovements",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/reportes?startDate=2023-10-01&endDate=2023-10-31",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"reportes"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2023-10-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2023-10-31"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listAllMovementsByAccount",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "    {\r\n    \"name\": \"Marianela Montalvo\",\r\n    \"address\": \"Amazonas y NNUU\",\r\n    \"Teléfono\": \"097548965\",\r\n    \"phone\": \"5678\",\r\n    \"status\": true,\r\n     \"age\": 40,\r\n     \"gender\":\"female\"\r\n  }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9090/movimientos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9090",
+					"path": [
+						"movimientos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
